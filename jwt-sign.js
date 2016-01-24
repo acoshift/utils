@@ -6,7 +6,7 @@ var jwt = require('jsonwebtoken');
   // input structure
   interface JWTSignInput {
     data: Object;
-    secret: string;
+    secret: string (base64);
     options: Object; // jwt sign options
   }
 */

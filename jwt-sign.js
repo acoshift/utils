@@ -13,7 +13,8 @@ var jwt = require('jsonwebtoken');
 
 try {
   let f = JSON.parse(fs.readFileSync(process.argv[2]));
-  console.log(jwt.sign(f.data, new Buffer(f.secret, 'base64').toString(), f.options));
+  let r = jwt.sign(f.data, new Buffer(f.secret, 'base64').toString(), f.options);
+  process.stdout.write(r); // no new line
 } catch(e) {
   console.error(e);
 }

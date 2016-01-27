@@ -1,13 +1,17 @@
-'use strict';
-var fs = require('fs');
-var nepq = require('nepq');
+'use strict'
+const fs = require('fs')
+const nepq = require('nepq')
 
 /*
   // input: string
 */
 
 try {
-  console.log(nepq.parse(process.argv[2]));
-} catch(e) {
-  console.error(e);
+  let f = process.argv[2]
+  try {
+    f = fs.readFileSync(f).toString()
+  } catch (e) {}
+  console.log(nepq.parse(f))
+} catch (e) {
+  console.error(e)
 }

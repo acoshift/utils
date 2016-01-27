@@ -1,6 +1,6 @@
-'use strict';
-var fs = require('fs');
-var jwt = require('jsonwebtoken');
+'use strict'
+const fs = require('fs')
+const jwt = require('jsonwebtoken')
 
 /*
   // input structure
@@ -12,9 +12,9 @@ var jwt = require('jsonwebtoken');
 */
 
 try {
-  let f = JSON.parse(fs.readFileSync(process.argv[2]));
-  let r = jwt.sign(f.data, new Buffer(f.secret, 'base64').toString(), f.options);
-  process.stdout.write(r); // no new line
-} catch(e) {
-  console.error(e);
+  let f = JSON.parse(fs.readFileSync(process.argv[2]))
+  let r = jwt.sign(f.data, new Buffer(f.secret, 'base64').toString(), f.options)
+  process.stdout.write(r) // no new line
+} catch (e) {
+  console.error(e)
 }
